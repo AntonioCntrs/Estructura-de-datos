@@ -1,0 +1,35 @@
+using System;
+
+class Progam
+{
+    static void Main()
+    {
+        int[] lista = { 3, 6, 9, 15, 21, 30, 42 };
+        Console.WriteLine("Ingrese un numero a buscar: ");
+        int numero = int.Parse(Console.ReadLine());
+
+        int izquierda = 0;
+        int derecha = lista.Length - 1;
+
+        while (izquierda <= derecha)
+        {
+            int medio = (izquierda + izquierda) / 2;
+
+            if (lista[medio] == numero)
+            {
+                Console.WriteLine($"Numero encontrado en la posicion {medio}");
+                return;
+            }
+            else if (lista[medio] < numero)
+            {
+                izquierda = medio + 1;
+            }
+            else
+            {
+                derecha = medio - 1;
+            }
+        }
+        Console.WriteLine("Numero no encontrado");
+
+    }
+}
